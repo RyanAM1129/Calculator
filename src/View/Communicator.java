@@ -14,7 +14,7 @@ public class Communicator {
     public static final String ANSI_RED = "\u001B[31m";
 
     private boolean keepGoing;
-    Scanner console = new Scanner(System.in);
+    Scanner keyboard = new Scanner(System.in);
 
     /**
      * getInt receives and checks user input until it gets an integer
@@ -26,13 +26,13 @@ public class Communicator {
 
         while (!keepGoing) {                        //Uses a while loop to make sure it keeps asking
             System.out.println(ANSI + message);     //until it gets a valid input
-            if (console.hasNextInt()) {             //Uses .hasNextInt to see if user input is an int
-                answer = console.nextInt();
-                console.nextLine();
+            if (keyboard.hasNextInt()) {             //Uses .hasNextInt to see if user input is an int
+                answer = keyboard.nextInt();
+                keyboard.nextLine();
                 keepGoing = true;
             } else {
                 System.out.println(ANSI_RED + "!!!We are sorry, your choice is invalid!!!");
-                console.next();
+                keyboard.next();
             }
         }
 
@@ -50,9 +50,9 @@ public class Communicator {
 
         while (!keepGoing) {
             System.out.println(ANSI + message);
-            if (console.hasNextInt()) {
-                answer = console.nextInt();
-                console.nextLine();
+            if (keyboard.hasNextInt()) {
+                answer = keyboard.nextInt();
+                keyboard.nextLine();
                 if (answer <= max && answer >= min) {
                     keepGoing = true;
                 } else {
@@ -60,7 +60,7 @@ public class Communicator {
                 }
             } else {
                 System.out.println(ANSI_RED + "!!!We are sorry, your choice is invalid!!!");
-                console.next();
+                keyboard.next();
             }
         }
 
@@ -76,13 +76,13 @@ public class Communicator {
 
         while (!keepGoing) {
             System.out.println(ANSI + message);
-            if (console.hasNextDouble()) {
-                answer = console.nextDouble();
-                console.nextLine();
+            if (keyboard.hasNextDouble()) {
+                answer = keyboard.nextDouble();
+                keyboard.nextLine();
                 keepGoing = true;
             } else {
                 System.out.println(ANSI_RED + "!!!We are sorry, your choice is invalid!!!");
-                console.nextLine();
+                keyboard.nextLine();
             }
         }
 
@@ -103,9 +103,9 @@ public class Communicator {
 
         while (!keepGoing) {
             System.out.println(ANSI + message);
-            if (console.hasNextDouble()) {
-                answer = console.nextDouble();
-                console.nextLine();
+            if (keyboard.hasNextDouble()) {
+                answer = keyboard.nextDouble();
+                keyboard.nextLine();
                 keepGoing = true;
                 if (answer > max || answer < min) {
                     System.out.println(ANSI_RED + "!!!We are sorry, your choice is invalid!!!");
@@ -113,7 +113,7 @@ public class Communicator {
                 }
             } else {
                 System.out.println(ANSI_RED + "!!!We are sorry, your choice is invalid!!!");
-                console.next();
+                keyboard.next();
             }
         }
 
@@ -130,14 +130,14 @@ public class Communicator {
 
         while (!keepGoing) {
             System.out.println(ANSI + message);
-            if (console.hasNextBigInteger()) {
-                answer = console.nextBigInteger();
-                console.nextLine();
+            if (keyboard.hasNextBigInteger()) {
+                answer = keyboard.nextBigInteger();
+                keyboard.nextLine();
                 keepGoing = true;
                 break;
             } else {
                 System.out.println(ANSI_RED + "!!!We are sorry, your choice is invalid!!!");
-                String dump = console.nextLine();
+                String dump = keyboard.nextLine();
                 dump = "";
             }
         }
@@ -155,7 +155,7 @@ public class Communicator {
 
         while (!keepGoing) {
             System.out.println(ANSI + message);
-            check = console.nextLine();
+            check = keyboard.nextLine();
             keepGoing = true;
             for (int i = 0; i < check.length(); i++) {
                 if (check.charAt(i) != '0' && check.charAt(i) != '1') {
@@ -181,7 +181,7 @@ public class Communicator {
 
         while (!keepGoing) {
             System.out.println(ANSI + message);
-            check = console.nextLine();
+            check = keyboard.nextLine();
             keepGoing = true;
 
             for (int i = 0; i < check.length(); i++) {
@@ -209,7 +209,7 @@ public class Communicator {
         while (!keepGoing) {
             System.out.println(ANSI + "Would you like to do another?" +
                     "(y - yes, n - no)");
-            answer = console.nextLine();
+            answer = keyboard.nextLine();
             if (answer.length() > 1 ||
                     (answer.charAt(0) != 'y' && answer.charAt(0) != 'n')) {
                 System.out.println(ANSI_RED + "!!!We are sorry, your choice is invalid!!!");
@@ -223,5 +223,24 @@ public class Communicator {
         }
 
         return doAnother;
+    }
+
+    public String getUnit(String ANSI, String message){
+        keepGoing = false;
+        String[] possibleUnits = {"b", "B", "kb", "KB", "mb", "MB", "gb", "GB", "tb", "TB"};
+        String check = "";
+
+        while(!keepGoing) {
+            System.out.println(ANSI + message);
+            check = keyboard.nextLine();
+
+            for (String unit : possibleUnits) {
+                if (check.equals(unit)) {
+                    keepGoing = true;
+                    break;
+                }
+            }
+        }
+        return check;
     }
 }
