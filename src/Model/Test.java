@@ -7,7 +7,7 @@ public class Test {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                CalculatorGUI gui = new CalculatorGUI();
+                FirstCalculatorGUI gui = new FirstCalculatorGUI();
                 JFrame frame = new JFrame();
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.getContentPane().add(gui);
