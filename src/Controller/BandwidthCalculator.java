@@ -88,33 +88,33 @@ public class BandwidthCalculator extends DecimalCalculator {
         return data;
     }
 
-    public String convertTime(double time){
+    public String convertTime(double seconds){
         StringBuilder finTime = new StringBuilder();
         int days = 0;
         int hours = 0;
         int minutes = 0;
 
-        if(time / 86400 >= 1)
+        if(seconds / 86400 >= 1)
         {
-            days = (int)(time / 86400);
-            time = time - (days * 86400);
+            days = (int)(seconds / 86400);
+            seconds = seconds - (days * 86400);
             finTime.append(days + " days ");
         }
-        if(time / 3600 >= 1)
+        if(seconds / 3600 >= 1)
         {
-            hours = (int)(time / 3600);
-            time -= hours * 3600;
+            hours = (int)(seconds / 3600);
+            seconds -= hours * 3600;
             finTime.append(hours + " hours ");
         }
-        if(time / 60 >= 1)
+        if(seconds / 60 >= 1)
         {
-            minutes = (int)(time / 60);
-            time -= minutes * 60;
+            minutes = (int)(seconds / 60);
+            seconds -= minutes * 60;
             finTime.append(minutes + " minutes ");
         }
-        if(time > 0)
+        if(seconds > 0)
         {
-            finTime.append(time + " seconds ");
+            finTime.append(seconds + " seconds ");
         }
 
         return finTime.toString();
@@ -131,6 +131,17 @@ public class BandwidthCalculator extends DecimalCalculator {
         System.out.println(ANSI_YELLOW + (bits / 8E+6) + " MegaBytes (MB)");
         System.out.println(ANSI_YELLOW + (bits / 8E+9) + " GigaBytes (GB)");
         System.out.println(ANSI_YELLOW + (bits / 8E+12) + " TeraBytes (TB)");
+
+//        return ANSI_YELLOW + bits + " bits (b)\n"
+//                + (bits / 1000) + " kilobits (kb)\n"
+//                + (bits / 1E+6) + " megabits (mb)\n"
+//                + (bits / 1E+9) + " gigabits (gb)\n"
+//                + (bits / 1E+12) + " terabits (tb)\n"          Use this block of code for GUI
+//                + (bits / 8) + " Bytes (B)\n"
+//                + (bits / 8000) + " KiloBytes (KB)"
+//                + (bits / 8E+6) + " MegaBytes (MB)"
+//                + (bits / 8E+9) + " GigaBytes (GB)"
+//                + (bits / 8E+12) + " TeraBytes (TB)";
     }
 
     public boolean isUnit(){
