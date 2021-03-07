@@ -31,4 +31,8 @@ public class Binary extends Number{
     public String getBitStr(){
         return this.bitString.toString();
     }
+
+    public String toString(){
+        return this.bitString + "(" + this.decimal + ")";
+    }
 }

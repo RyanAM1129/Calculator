@@ -30,7 +30,7 @@ public class DecimalCalculator extends Calculator{
     }
 
     public boolean isNum(String str){
-        try { Integer.parseInt(str); return true; }
+        try { Double.parseDouble(str); return true; }
         catch (NumberFormatException nfe){ return false; }
     }
 }

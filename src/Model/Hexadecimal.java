@@ -28,4 +28,8 @@ public class Hexadecimal extends Number {
     public int getDecimal(){
         return this.decimal;
     }
+
+    public String toString(){
+        return this.hexString + "(" + this.decimal + ")";
+    }
 }
