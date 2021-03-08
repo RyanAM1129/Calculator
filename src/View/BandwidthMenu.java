@@ -81,7 +81,7 @@ public class BandwidthMenu extends Menu{
                         bandCalc.buildBandwidth();
                         //Changes bandwidth field to bits and sets it to bits field
                         bandCalc.setBits(bandCalc.toBits(bandCalc.getBandwidth()));
-                        bandCalc.unitConverter();
+                        //bandCalc.unitConverter();
 
                         break;
 

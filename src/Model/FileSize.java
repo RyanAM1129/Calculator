@@ -1,26 +1,22 @@
 package Model;
 
-
 import Controller.BitConverter;
 
-/**
- * Bandwidth is an abstract data type designed to represent different bandwidths in bit/s
- * */
-public class Bandwidth {
-    private double bitPerSec;
+public class FileSize {
+    private double bits;
     private double value;
     private String unit;
     BitConverter bitConverter;
 
-    public Bandwidth(double value, String unit){
+    public FileSize(double value, String unit){
         bitConverter = new BitConverter();
         this.value = value;
         this.unit = unit;
-        this.bitPerSec = bitConverter.toBits(value + unit);
+        this.bits = bitConverter.toBits(value + unit);
     }
 
-    public double getBitPerSec(){
-        return this.bitPerSec;
+    public double getBits(){
+        return this.bits;
     }
     public double getValue(){
         return this.value;
@@ -28,8 +24,7 @@ public class Bandwidth {
     public String getUnit(){
         return this.unit;
     }
-
     public String toString(){
-        return this.value + this.unit + "/s";
+        return this.value + this.unit;
     }
 }

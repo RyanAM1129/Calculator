@@ -43,4 +43,20 @@ public class Validator {
 
         return true;
     }
+
+//    public boolean isUnit(String check){
+//        String[] units = {"b", "B", "kb", "KB", "mb", "MB", "gb", "GB", "tb", "TB"};
+//        boolean result = false;
+//
+//        for (String unit : units)
+//        {
+//            if (check.equals(unit))
+//            {
+//                result = true;
+//                break;
+//            }
+//        }
+//
+//        return result;
+//    }
 }

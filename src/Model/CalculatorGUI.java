@@ -70,11 +70,109 @@ public class CalculatorGUI {
     private JButton hexConvClearButton;
     private JScrollPane hexConvScroll;
     private JTextArea hexConvAnswerDisplay;
+    private JTabbedPane bandwidthTab;
+    private JPanel dataUnitConvPanel;
+    private JButton dataUnitConvClearButton;
+    private JTextField dataUnitConvField;
+    private JButton dataUnitConvKBButton;
+    private JButton dataUnitConvMBButton;
+    private JButton dataUnitConvBButton;
+    private JButton dataUnitConvbButton;
+    private JButton dataUnitConvkbButton;
+    private JButton dataUnitConvmbButton;
+    private JButton dataUnitConvGBButton;
+    private JButton dataUnitConvgbButton;
+    private JButton dataUnitConvtbButton;
+    private JButton dataUnitConvTBButton;
+    private JTextArea dataUnitConvAnswerDisplay;
+    private JPanel dataUnitConvBotPanel;
+    private JPanel dataUnitConvFieldPanel;
+    private JPanel dataUnitConvFieldPanel2;
+    private JPanel dataUnitConvButtonPanel;
+    private JLabel dataUnitConvLabel;
+    private JScrollPane dataUnitConvScroll;
+    private JTextField downUpCalcAnswerDisplay;
+    private JButton downUpCalculateButton;
+    private JTextField downUpCalcFileField;
+    private JTextField downUpCalcBandField;
+    private JRadioButton downUpCalcBButton;
+    private JRadioButton downUpCalcKBButton;
+    private JRadioButton downUpCalcMBButton;
+    private JRadioButton downUpCalcGBButton;
+    private JRadioButton downUpCalcTBButton;
+    private JRadioButton downUpCalctbitSButton;
+    private JRadioButton downUpCalcgbitSButton;
+    private JRadioButton downUpCalcmbitSButton;
+    private JRadioButton downUpCalckbitSButton;
+    private JRadioButton downUpCalcbitSButton;
+    private JButton downUpCalcClearButton;
+    private JPanel downUpCalcPanel;
+    private JPanel downUpCalcAnswerPanel;
+    private JPanel downUpCalcCenterPanel;
+    private JLabel downUpCalcFileLabel;
+    private JLabel downUpCalcBandLabel;
+    private JPanel downUpCalcButtonPanel2;
+    private JPanel downUpCalcButtonPanel1;
+    private JPanel webCalcPanel;
+    private JPanel webCalcAnswerPanel;
+    private JButton webCalculateButton;
+    private JTextArea webCalcAnswerDisplay;
+    private JPanel webCalcCenterPanel;
+    private JLabel webCalcFileLabel;
+    private JLabel webCalcBandLabel;
+    private JTextField webCalcSizeField;
+    private JTextField webCalcViewField;
+    private JPanel webCalcButtonPanel2;
+    private JRadioButton webCalcWeekButton;
+    private JRadioButton webCalcDayButton;
+    private JRadioButton webCalcHourButton;
+    private JRadioButton webCalcMinButton;
+    private JRadioButton webCalcSecButton;
+    private JPanel webCalcButtonPanel1;
+    private JRadioButton webCalcBButton;
+    private JRadioButton webCalcKBButton;
+    private JRadioButton webCalcMBButton;
+    private JRadioButton webCalcGBButton;
+    private JRadioButton webCalcTBButton;
+    private JButton webCalcClearButton;
+    private JTextField webCalcRedundancyField;
+    private JLabel webCalcRedundancyLabel;
+    private JRadioButton webCalcMonthButton;
+    private JRadioButton webCalcYearButton;
+    private JTextField hostConvMonthField;
+    private JTextField hostConvBandField;
+    private JRadioButton hostConvBButton;
+    private JRadioButton hostConvKBButton;
+    private JRadioButton hostConvMBButton;
+    private JRadioButton hostConvGBButton;
+    private JRadioButton hostConvTBButton;
+    private JRadioButton hostConvbitSButton;
+    private JRadioButton hostConvKbitSButton;
+    private JRadioButton hostConvMbitSButton;
+    private JRadioButton hostConvGbitSButton;
+    private JRadioButton hostConvTbitSButton;
+    private JButton hostCalculateButton;
+    private JButton hostConvClearButton;
+    private JPanel hostConvPanel;
+    private JPanel hostConvBotPanel;
+    private JPanel hostConvCenterPanel;
+    private JLabel hostConvMonthLabel;
+    private JPanel hostConvButtonPanel1;
+    private JLabel hostConvCenterLabel;
+    private JLabel hostConvBandLabel;
+    private JPanel hostConvButtonPanel2;
+    Bandwidth bw;
+    FileSize fs;
     Validator validator;
     DecimalCalculator decCalc;
     BigIntegerCalculator bIntCalc;
     BinaryCalculator binCalc;
     HexadecCalculator hexCalc;
+    UnitConverter unitConv;
+    BitConverter bitConv;
+    DownUpTimeCalc downUpCalc;
+    WebSiteBandCalc webCalc;
+    HostBandCalc hostBandCalc;
 
     public CalculatorGUI(){
         validator = new Validator();
@@ -383,6 +481,390 @@ public class CalculatorGUI {
                     hexConvAnswerDisplay.append("\n");
                 }
                 hexConvAnswerDisplay.append(tempHex.getHexStr() + " decimal value is " + tempHex.getDecimal());
+            }
+        });
+
+
+        unitConv = new UnitConverter();
+        bitConv = new BitConverter();
+        dataUnitConvAnswerDisplay.setEditable(false);
+
+        dataUnitConvClearButton.addActionListener(ae -> {
+            if(dataUnitConvField.getText().isEmpty()){
+                dataUnitConvAnswerDisplay.setText("");
+            }
+            else{
+                dataUnitConvField.setText("");
+            }
+        });
+        dataUnitConvbButton.addActionListener(ae -> {
+            if(validator.isDecimal(dataUnitConvField.getText())) {
+                double bits = Double.parseDouble(dataUnitConvField.getText());
+                dataUnitConvAnswerDisplay.setText(unitConv.dataUnitConv(bits));
+            }
+        });
+        dataUnitConvBButton.addActionListener(ae -> {
+            if(validator.isDecimal(dataUnitConvField.getText())) {
+                double bits = bitConv.toBits(dataUnitConvField.getText() + "B");
+                dataUnitConvAnswerDisplay.setText(unitConv.dataUnitConv(bits));
+            }
+        });
+        dataUnitConvkbButton.addActionListener(ae -> {
+            if(validator.isDecimal(dataUnitConvField.getText())) {
+                double bits = bitConv.toBits(dataUnitConvField.getText() + "kb");
+                dataUnitConvAnswerDisplay.setText(unitConv.dataUnitConv(bits));
+            }
+        });
+        dataUnitConvKBButton.addActionListener(ae -> {
+            if(validator.isDecimal(dataUnitConvField.getText())) {
+                double bits = bitConv.toBits(dataUnitConvField.getText() + "KB");
+                dataUnitConvAnswerDisplay.setText(unitConv.dataUnitConv(bits));
+            }
+        });
+        dataUnitConvmbButton.addActionListener(ae -> {
+            if(validator.isDecimal(dataUnitConvField.getText())) {
+                double bits = bitConv.toBits(dataUnitConvField.getText() + "mb");
+                dataUnitConvAnswerDisplay.setText(unitConv.dataUnitConv(bits));
+            }
+        });
+        dataUnitConvMBButton.addActionListener(ae -> {
+            if(validator.isDecimal(dataUnitConvField.getText())) {
+                double bits = bitConv.toBits(dataUnitConvField.getText() + "MB");
+                dataUnitConvAnswerDisplay.setText(unitConv.dataUnitConv(bits));
+            }
+        });
+        dataUnitConvgbButton.addActionListener(ae -> {
+            if(validator.isDecimal(dataUnitConvField.getText())) {
+                double bits = bitConv.toBits(dataUnitConvField.getText() + "gb");
+                dataUnitConvAnswerDisplay.setText(unitConv.dataUnitConv(bits));
+            }
+        });
+        dataUnitConvGBButton.addActionListener(ae -> {
+            if(validator.isDecimal(dataUnitConvField.getText())) {
+                double bits = bitConv.toBits(dataUnitConvField.getText() + "GB");
+                dataUnitConvAnswerDisplay.setText(unitConv.dataUnitConv(bits));
+            }
+        });
+        dataUnitConvtbButton.addActionListener(ae -> {
+            if(validator.isDecimal(dataUnitConvField.getText())) {
+                double bits = bitConv.toBits(dataUnitConvField.getText() + "tb");
+                dataUnitConvAnswerDisplay.setText(unitConv.dataUnitConv(bits));
+            }
+        });
+        dataUnitConvTBButton.addActionListener(ae -> {
+            if(validator.isDecimal(dataUnitConvField.getText())) {
+                double bits = bitConv.toBits(dataUnitConvField.getText() + "TB");
+                dataUnitConvAnswerDisplay.setText(unitConv.dataUnitConv(bits));
+            }
+        });
+
+
+        downUpCalcAnswerDisplay.setEditable(false);
+        downUpCalc = new DownUpTimeCalc();
+        downUpCalcMBButton.setSelected(true);
+        downUpCalcmbitSButton.setSelected(true);
+
+        downUpCalcClearButton.addActionListener(ae -> {
+            downUpCalcAnswerDisplay.setText("");
+            downUpCalcFileField.setText("");
+            downUpCalcBandField.setText("");
+        });
+        downUpCalculateButton.addActionListener(ae -> {
+            if(validator.isDecimal(downUpCalcFileField.getText()) &&
+                    validator.isDecimal(downUpCalcBandField.getText())) {
+
+                double value = Double.parseDouble(downUpCalcFileField.getText());
+                if (downUpCalcBButton.isSelected()) {
+                    fs = new FileSize(value, "B");
+                }
+                else if(downUpCalcKBButton.isSelected()){
+                    fs = new FileSize(value, "KB");
+                }
+                else if(downUpCalcMBButton.isSelected()){
+                    fs = new FileSize(value, "MB");
+                }
+                else if(downUpCalcGBButton.isSelected()){
+                    fs = new FileSize(value, "GB");
+                }
+                else if(downUpCalcTBButton.isSelected()){
+                    fs = new FileSize(value, "TB");
+                }
+
+                value = Double.parseDouble(downUpCalcBandField.getText());
+                if (downUpCalcbitSButton.isSelected()) {
+                    bw = new Bandwidth(value, "b");
+                }
+                else if(downUpCalckbitSButton.isSelected()){
+                    bw = new Bandwidth(value, "kb");
+                }
+                else if(downUpCalcmbitSButton.isSelected()){
+                    bw = new Bandwidth(value, "mb");
+                }
+                else if(downUpCalcgbitSButton.isSelected()){
+                    bw = new Bandwidth(value, "gb");
+                }
+                else if(downUpCalctbitSButton.isSelected()){
+                    bw = new Bandwidth(value, "tb");
+                }
+                downUpCalcAnswerDisplay.setText(downUpCalc.downUpTime(bw, fs));
+            }
+        });
+
+
+        webCalcAnswerDisplay.setEditable(false);
+        webCalc = new WebSiteBandCalc();
+        webCalcDayButton.setSelected(true);
+        webCalcKBButton.setSelected(true);
+
+        webCalcClearButton.addActionListener(ae -> {
+            webCalcAnswerDisplay.setText("");
+            webCalcSizeField.setText("");
+            webCalcViewField.setText("");
+        });
+        webCalculateButton.addActionListener(ae -> {
+            if(validator.isDecimal(webCalcViewField.getText()) && validator.isDecimal(webCalcSizeField.getText()) &&
+                    validator.isInt(webCalcRedundancyField.getText())){
+                double size = Double.parseDouble(webCalcSizeField.getText());
+                double views = Double.parseDouble(webCalcViewField.getText());
+                int viewFreq = 0;
+                int redundancy = Integer.parseInt(webCalcRedundancyField.getText());
+                if(webCalcBButton.isSelected()){
+                    fs = new FileSize(size, "B");
+                }
+                else if(webCalcKBButton.isSelected()){
+                    fs = new FileSize(size, "KB");
+                }
+                else if(webCalcMBButton.isSelected()){
+                    fs = new FileSize(size, "MB");
+                }
+                else if(webCalcGBButton.isSelected()){
+                    fs = new FileSize(size, "GB");
+                }
+                else if(webCalcTBButton.isSelected()){
+                    fs = new FileSize(size, "TB");
+                }
+
+                if(webCalcSecButton.isSelected()){
+                    viewFreq = 1;
+                }
+                else if(webCalcMinButton.isSelected()){
+                    viewFreq = 2;
+                }
+                else if(webCalcHourButton.isSelected()){
+                    viewFreq = 3;
+                }
+                else if(webCalcDayButton.isSelected()){
+                    viewFreq = 4;
+                }
+                else if(webCalcWeekButton.isSelected()){
+                    viewFreq = 5;
+                }
+                else if(webCalcMonthButton.isSelected()){
+                    viewFreq = 6;
+                }
+                else if(webCalcYearButton.isSelected()){
+                    viewFreq = 7;
+                }
+
+                webCalcAnswerDisplay.setText(webCalc.webBandCalc(viewFreq, views, fs, redundancy));
+            }
+        });
+
+
+        hostBandCalc = new HostBandCalc();
+        hostConvGBButton.setSelected(true);
+        hostConvMbitSButton.setSelected(true);
+
+        hostConvClearButton.addActionListener(ae -> {
+            hostConvMonthField.setText("");
+            hostConvBandField.setText("");
+        });
+        hostCalculateButton.addActionListener(ae -> {
+            if(!hostConvMonthField.getText().isEmpty() && validator.isDecimal(hostConvMonthField.getText())){
+                double monthlyUse = Double.parseDouble(hostConvMonthField.getText());
+
+                if(hostConvBButton.isSelected()){   //Bytes to ...
+                    if(hostConvbitSButton.isSelected()) {   //bits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(monthlyUse, 1));
+                    }
+                    else if(hostConvKbitSButton.isSelected()){  //Kilobits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(monthlyUse, 2));
+                    }
+                    else if(hostConvMbitSButton.isSelected()){  //Megabits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(monthlyUse, 3));
+                    }
+                    else if(hostConvGbitSButton.isSelected()){  //Gigabits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(monthlyUse, 4));
+                    }
+                    else if(hostConvTbitSButton.isSelected()){  //Terabits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(monthlyUse, 5));
+                    }
+                }
+                else if(hostConvKBButton.isSelected()){ //KiloBytes to ...
+                    double bits = bitConv.toBits(monthlyUse + "kb");
+                    if(hostConvbitSButton.isSelected()) {   //bits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(bits, 1));
+                    }
+                    else if(hostConvKbitSButton.isSelected()){  //Kilobits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(bits, 2));
+                    }
+                    else if(hostConvMbitSButton.isSelected()){  //Megabits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(bits, 3));
+                    }
+                    else if(hostConvGbitSButton.isSelected()){  //Gigabits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(bits, 4));
+                    }
+                    else if(hostConvTbitSButton.isSelected()){  //Terabits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(bits, 5));
+                    }
+                }
+                else if(hostConvMBButton.isSelected()){ //MegaBytes to ...
+                    double bits = bitConv.toBits(monthlyUse + "mb");
+                    if(hostConvbitSButton.isSelected()) {   //bits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(bits, 1));
+                    }
+                    else if(hostConvKbitSButton.isSelected()){  //Kilobits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(bits, 2));
+                    }
+                    else if(hostConvMbitSButton.isSelected()){  //Megabits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(bits, 3));
+                    }
+                    else if(hostConvGbitSButton.isSelected()){  //Gigabits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(bits, 4));
+                    }
+                    else if(hostConvTbitSButton.isSelected()){  //Terabits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(bits, 5));
+                    }
+                }
+                else if(hostConvGBButton.isSelected()){ //GigaBytes to ...
+                    double bits = bitConv.toBits(monthlyUse + "gb");
+                    if(hostConvbitSButton.isSelected()) {   //bits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(bits, 1));
+                    }
+                    else if(hostConvKbitSButton.isSelected()){  //Kilobits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(bits, 2));
+                    }
+                    else if(hostConvMbitSButton.isSelected()){  //Megabits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(bits, 3));
+                    }
+                    else if(hostConvGbitSButton.isSelected()){  //Gigabits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(bits, 4));
+                    }
+                    else if(hostConvTbitSButton.isSelected()){  //Terabits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(bits, 5));
+                    }
+                }
+                else if(hostConvTBButton.isSelected()){ //TeraBytes to ...
+                    double bits = bitConv.toBits(monthlyUse + "tb");
+                    if(hostConvbitSButton.isSelected()) {   //bits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(bits, 1));
+                    }
+                    else if(hostConvKbitSButton.isSelected()){  //Kilobits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(bits, 2));
+                    }
+                    else if(hostConvMbitSButton.isSelected()){  //Megabits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(bits, 3));
+                    }
+                    else if(hostConvGbitSButton.isSelected()){  //Gigabits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(bits, 4));
+                    }
+                    else if(hostConvTbitSButton.isSelected()){  //Terabits per second
+                        hostConvBandField.setText("" + hostBandCalc.toBandwidth(bits, 5));
+                    }
+                }
+            }
+            else if(!hostConvBandField.getText().isEmpty() && validator.isDecimal(hostConvBandField.getText())){
+                double bandwidth = Double.parseDouble(hostConvBandField.getText());
+
+                if(hostConvbitSButton.isSelected()){    //Bits per second to ...
+                    if(hostConvBButton.isSelected()){   //Bytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bandwidth, 1));
+                    }
+                    else if(hostConvKBButton.isSelected()){ //KiloBytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bandwidth, 2));
+                    }
+                    else if(hostConvMBButton.isSelected()){ //MegaBytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bandwidth, 3));
+                    }
+                    else if(hostConvGBButton.isSelected()){ //GigaBytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bandwidth, 4));
+                    }
+                    else if(hostConvTBButton.isSelected()){ //TeraBytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bandwidth, 5));
+                    }
+                }
+                else if(hostConvKbitSButton.isSelected()){ //KiloBits per second to ...
+                    double bits = bitConv.toBits(bandwidth + "Kb");
+                    if(hostConvBButton.isSelected()){   //Bytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bits, 1));
+                    }
+                    else if(hostConvKBButton.isSelected()){ //KiloBytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bits, 2));
+                    }
+                    else if(hostConvMBButton.isSelected()){ //MegaBytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bits, 3));
+                    }
+                    else if(hostConvGBButton.isSelected()){ //GigaBytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bits, 4));
+                    }
+                    else if(hostConvTBButton.isSelected()){ //TeraBytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bits, 5));
+                    }
+                }
+                else if(hostConvMbitSButton.isSelected()){ //MegaBits per second to ...
+                    double bits = bitConv.toBits(bandwidth + "Mb");
+                    if(hostConvBButton.isSelected()){   //Bytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bits, 1));
+                    }
+                    else if(hostConvKBButton.isSelected()){ //KiloBytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bits, 2));
+                    }
+                    else if(hostConvMBButton.isSelected()){ //MegaBytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bits, 3));
+                    }
+                    else if(hostConvGBButton.isSelected()){ //GigaBytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bits, 4));
+                    }
+                    else if(hostConvTBButton.isSelected()){ //TeraBytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bits, 5));
+                    }
+                }
+                else if(hostConvGbitSButton.isSelected()){ //GigaBits per second to ...
+                    double bits = bitConv.toBits(bandwidth + "Gb");
+                    if(hostConvBButton.isSelected()){   //Bytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bits, 1));
+                    }
+                    else if(hostConvKBButton.isSelected()){ //KiloBytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bits, 2));
+                    }
+                    else if(hostConvMBButton.isSelected()){ //MegaBytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bits, 3));
+                    }
+                    else if(hostConvGBButton.isSelected()){ //GigaBytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bits, 4));
+                    }
+                    else if(hostConvTBButton.isSelected()){ //TeraBytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bits, 5));
+                    }
+                }
+                else if(hostConvTbitSButton.isSelected()){ //TeraBits per second to ...
+                    double bits = bitConv.toBits(bandwidth + "Tb");
+                    if(hostConvBButton.isSelected()){   //Bytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bits, 1));
+                    }
+                    else if(hostConvKBButton.isSelected()){ //KiloBytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bits, 2));
+                    }
+                    else if(hostConvMBButton.isSelected()){ //MegaBytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bits, 3));
+                    }
+                    else if(hostConvGBButton.isSelected()){ //GigaBytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bits, 4));
+                    }
+                    else if(hostConvTBButton.isSelected()){ //TeraBytes per month
+                        hostConvMonthField.setText("" + hostBandCalc.toMonthlyUse(bits, 5));
+                    }
+                }
             }
         });
     }

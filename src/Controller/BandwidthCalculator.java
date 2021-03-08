@@ -120,30 +120,6 @@ public class BandwidthCalculator extends DecimalCalculator {
         return finTime.toString();
     }
 
-    public void unitConverter(){
-        System.out.println(ANSI_YELLOW + bits + " bits (b)");
-        System.out.println(ANSI_YELLOW + (bits / 1000) + " kilobits (kb)");
-        System.out.println(ANSI_YELLOW + (bits / 1E+6) + " megabits (mb)");
-        System.out.println(ANSI_YELLOW + (bits / 1E+9) + " gigabits (gb)");
-        System.out.println(ANSI_YELLOW + (bits / 1E+12) + " terabits (tb)");
-        System.out.println(ANSI_YELLOW + (bits / 8) + " Bytes (B)");
-        System.out.println(ANSI_YELLOW + (bits / 8000) + " KiloBytes (KB)");
-        System.out.println(ANSI_YELLOW + (bits / 8E+6) + " MegaBytes (MB)");
-        System.out.println(ANSI_YELLOW + (bits / 8E+9) + " GigaBytes (GB)");
-        System.out.println(ANSI_YELLOW + (bits / 8E+12) + " TeraBytes (TB)");
-
-//        return ANSI_YELLOW + bits + " bits (b)\n"
-//                + (bits / 1000) + " kilobits (kb)\n"
-//                + (bits / 1E+6) + " megabits (mb)\n"
-//                + (bits / 1E+9) + " gigabits (gb)\n"
-//                + (bits / 1E+12) + " terabits (tb)\n"          Use this block of code for GUI
-//                + (bits / 8) + " Bytes (B)\n"
-//                + (bits / 8000) + " KiloBytes (KB)"
-//                + (bits / 8E+6) + " MegaBytes (MB)"
-//                + (bits / 8E+9) + " GigaBytes (GB)"
-//                + (bits / 8E+12) + " TeraBytes (TB)";
-    }
-
     public boolean isUnit(){
         String[] units = {"b", "B", "kb", "KB", "mb", "MB", "gb", "GB", "tb", "TB"};
         boolean result = false;

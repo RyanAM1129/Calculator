@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
+      <xy x="20" y="20" width="527" height="531"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -14,7 +14,9 @@
             <preferred-size width="200" height="200"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <tabPlacement value="2"/>
+        </properties>
         <border type="none"/>
         <children>
           <grid id="79b25" binding="decCalcTab" layout-manager="GridLayoutManager" row-count="4" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -203,7 +205,9 @@
             <constraints>
               <tabbedpane title="Binary"/>
             </constraints>
-            <properties/>
+            <properties>
+              <tabPlacement value="1"/>
+            </properties>
             <border type="none"/>
             <children>
               <grid id="d2ab3" binding="binCalcPanel" layout-manager="GridLayoutManager" row-count="4" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -519,8 +523,797 @@
               </grid>
             </children>
           </tabbedpane>
+          <tabbedpane id="76842" binding="bandwidthTab">
+            <constraints>
+              <tabbedpane title="Bandwidth"/>
+            </constraints>
+            <properties>
+              <tabPlacement value="1"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <grid id="23d9a" binding="dataUnitConvPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <tabbedpane title="Data Unit Converter"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <grid id="a7b76" binding="dataUnitConvBotPanel" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <grid id="4f334" binding="dataUnitConvFieldPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <component id="95028" class="javax.swing.JButton" binding="dataUnitConvClearButton">
+                            <constraints border-constraint="South"/>
+                            <properties>
+                              <text value="Clear"/>
+                            </properties>
+                          </component>
+                          <grid id="dc4a9" binding="dataUnitConvFieldPanel2" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                            <margin top="0" left="0" bottom="0" right="0"/>
+                            <constraints border-constraint="Center"/>
+                            <properties/>
+                            <border type="none"/>
+                            <children>
+                              <component id="3380c" class="javax.swing.JTextField" binding="dataUnitConvField">
+                                <constraints>
+                                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                                    <preferred-size width="150" height="-1"/>
+                                  </grid>
+                                </constraints>
+                                <properties>
+                                  <text value="500"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                        </children>
+                      </grid>
+                      <grid id="4abbc" binding="dataUnitConvButtonPanel" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <component id="c434d" class="javax.swing.JButton" binding="dataUnitConvKBButton">
+                            <constraints>
+                              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="KiloBytes (KB)"/>
+                            </properties>
+                          </component>
+                          <component id="32ea0" class="javax.swing.JButton" binding="dataUnitConvMBButton">
+                            <constraints>
+                              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="MegaBytes (MB)"/>
+                            </properties>
+                          </component>
+                          <component id="5b75" class="javax.swing.JButton" binding="dataUnitConvBButton">
+                            <constraints>
+                              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="Bytes (B)"/>
+                            </properties>
+                          </component>
+                          <component id="8a1a9" class="javax.swing.JButton" binding="dataUnitConvbButton">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="bits (b)"/>
+                            </properties>
+                          </component>
+                          <component id="9b6ef" class="javax.swing.JButton" binding="dataUnitConvkbButton">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="kilobits (kb)"/>
+                            </properties>
+                          </component>
+                          <component id="3de68" class="javax.swing.JButton" binding="dataUnitConvmbButton">
+                            <constraints>
+                              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="megabits (mb)"/>
+                            </properties>
+                          </component>
+                          <component id="113e4" class="javax.swing.JButton" binding="dataUnitConvGBButton">
+                            <constraints>
+                              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="GigaBytes (GB)"/>
+                            </properties>
+                          </component>
+                          <component id="70d06" class="javax.swing.JButton" binding="dataUnitConvgbButton">
+                            <constraints>
+                              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="gigabits (gb)"/>
+                            </properties>
+                          </component>
+                          <component id="f6cee" class="javax.swing.JButton" binding="dataUnitConvtbButton">
+                            <constraints>
+                              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="terbits (tb)"/>
+                            </properties>
+                          </component>
+                          <component id="dfd96" class="javax.swing.JButton" binding="dataUnitConvTBButton">
+                            <constraints>
+                              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="TeraBytes (TB)"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                      <component id="5a488" class="javax.swing.JLabel" binding="dataUnitConvLabel">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Enter a value and click it's unit"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                  <scrollpane id="a77a" binding="dataUnitConvScroll">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="30139" class="javax.swing.JTextArea" binding="dataUnitConvAnswerDisplay">
+                        <constraints/>
+                        <properties/>
+                      </component>
+                    </children>
+                  </scrollpane>
+                </children>
+              </grid>
+              <grid id="8bbe0" binding="downUpCalcPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+                <constraints>
+                  <tabbedpane title="Download/Upload Time Calculator"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <grid id="484c3" binding="downUpCalcAnswerPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints border-constraint="North"/>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="c126a" class="javax.swing.JTextField" binding="downUpCalcAnswerDisplay">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                        </constraints>
+                        <properties/>
+                      </component>
+                    </children>
+                  </grid>
+                  <component id="79c23" class="javax.swing.JButton" binding="downUpCalculateButton">
+                    <constraints border-constraint="South"/>
+                    <properties>
+                      <text value="Calculate"/>
+                    </properties>
+                  </component>
+                  <grid id="46432" binding="downUpCalcCenterPanel" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints border-constraint="Center"/>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="73ded" class="javax.swing.JLabel" binding="downUpCalcFileLabel">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="File Size"/>
+                        </properties>
+                      </component>
+                      <component id="489b9" class="javax.swing.JLabel" binding="downUpCalcBandLabel">
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Bandwidth"/>
+                        </properties>
+                      </component>
+                      <component id="54b16" class="javax.swing.JTextField" binding="downUpCalcFileField">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <text value="500"/>
+                        </properties>
+                      </component>
+                      <component id="b62ab" class="javax.swing.JTextField" binding="downUpCalcBandField">
+                        <constraints>
+                          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <text value="5"/>
+                        </properties>
+                      </component>
+                      <grid id="8fc91" binding="downUpCalcButtonPanel2" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <component id="7db0f" class="javax.swing.JRadioButton" binding="downUpCalctbitSButton">
+                            <constraints>
+                              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="Tbit/s"/>
+                            </properties>
+                          </component>
+                          <component id="15681" class="javax.swing.JRadioButton" binding="downUpCalcgbitSButton">
+                            <constraints>
+                              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="Gbit/s"/>
+                            </properties>
+                          </component>
+                          <component id="75706" class="javax.swing.JRadioButton" binding="downUpCalcmbitSButton">
+                            <constraints>
+                              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="Mbit/s"/>
+                            </properties>
+                          </component>
+                          <component id="c71a1" class="javax.swing.JRadioButton" binding="downUpCalckbitSButton">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="Kbit/s"/>
+                            </properties>
+                          </component>
+                          <component id="4a0ce" class="javax.swing.JRadioButton" binding="downUpCalcbitSButton">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="bit/s"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                      <grid id="d6793" binding="downUpCalcButtonPanel1" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <component id="afe80" class="javax.swing.JRadioButton" binding="downUpCalcBButton">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="Bytes (B)"/>
+                            </properties>
+                          </component>
+                          <component id="ffcd3" class="javax.swing.JRadioButton" binding="downUpCalcKBButton">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="Kilobytes (KB)"/>
+                            </properties>
+                          </component>
+                          <component id="bc29" class="javax.swing.JRadioButton" binding="downUpCalcMBButton">
+                            <constraints>
+                              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="Megabytes (MB)"/>
+                            </properties>
+                          </component>
+                          <component id="f305c" class="javax.swing.JRadioButton" binding="downUpCalcGBButton">
+                            <constraints>
+                              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="Gigabytes (GB)"/>
+                            </properties>
+                          </component>
+                          <component id="81fb7" class="javax.swing.JRadioButton" binding="downUpCalcTBButton">
+                            <constraints>
+                              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="Terabytes (TB)"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                      <component id="ad29c" class="javax.swing.JButton" binding="downUpCalcClearButton">
+                        <constraints>
+                          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Clear"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                </children>
+              </grid>
+              <grid id="15619" binding="webCalcPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+                <constraints>
+                  <tabbedpane title="Website Bandwidth Calculator"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <grid id="54b1b" binding="webCalcAnswerPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints border-constraint="North"/>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="1fcfe" class="javax.swing.JTextArea" binding="webCalcAnswerDisplay">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="50"/>
+                          </grid>
+                        </constraints>
+                        <properties/>
+                      </component>
+                    </children>
+                  </grid>
+                  <grid id="c5241" binding="webCalcCenterPanel" layout-manager="GridLayoutManager" row-count="5" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints border-constraint="Center"/>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="a8292" class="javax.swing.JLabel" binding="webCalcFileLabel">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Page Size"/>
+                        </properties>
+                      </component>
+                      <component id="e2ace" class="javax.swing.JLabel" binding="webCalcBandLabel">
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Page Views"/>
+                        </properties>
+                      </component>
+                      <component id="9960a" class="javax.swing.JTextField" binding="webCalcSizeField">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <text value="500"/>
+                        </properties>
+                      </component>
+                      <component id="5c673" class="javax.swing.JTextField" binding="webCalcViewField">
+                        <constraints>
+                          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <text value="5000"/>
+                        </properties>
+                      </component>
+                      <grid id="94034" binding="webCalcButtonPanel2" layout-manager="GridLayoutManager" row-count="7" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <component id="6c34b" class="javax.swing.JRadioButton" binding="webCalcWeekButton">
+                            <constraints>
+                              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="/week"/>
+                            </properties>
+                          </component>
+                          <component id="37d9d" class="javax.swing.JRadioButton" binding="webCalcDayButton">
+                            <constraints>
+                              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="/day"/>
+                            </properties>
+                          </component>
+                          <component id="1b7e2" class="javax.swing.JRadioButton" binding="webCalcHourButton">
+                            <constraints>
+                              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="/hour"/>
+                            </properties>
+                          </component>
+                          <component id="e1539" class="javax.swing.JRadioButton" binding="webCalcMinButton">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="/minute"/>
+                            </properties>
+                          </component>
+                          <component id="cafee" class="javax.swing.JRadioButton" binding="webCalcSecButton">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="/second"/>
+                            </properties>
+                          </component>
+                          <component id="d20c1" class="javax.swing.JRadioButton" binding="webCalcMonthButton">
+                            <constraints>
+                              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="/month"/>
+                            </properties>
+                          </component>
+                          <component id="b5e7d" class="javax.swing.JRadioButton" binding="webCalcYearButton">
+                            <constraints>
+                              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="/year"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                      <grid id="f7c79" binding="webCalcButtonPanel1" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <component id="bd02f" class="javax.swing.JRadioButton" binding="webCalcBButton">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="Bytes (B)"/>
+                            </properties>
+                          </component>
+                          <component id="84fbe" class="javax.swing.JRadioButton" binding="webCalcKBButton">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="Kilobytes (KB)"/>
+                            </properties>
+                          </component>
+                          <component id="fa5e0" class="javax.swing.JRadioButton" binding="webCalcMBButton">
+                            <constraints>
+                              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="Megabytes (MB)"/>
+                            </properties>
+                          </component>
+                          <component id="9f8a7" class="javax.swing.JRadioButton" binding="webCalcGBButton">
+                            <constraints>
+                              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="Gigabytes (GB)"/>
+                            </properties>
+                          </component>
+                          <component id="7c080" class="javax.swing.JRadioButton" binding="webCalcTBButton">
+                            <constraints>
+                              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="Terabytes (TB)"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                      <component id="43ca8" class="javax.swing.JButton" binding="webCalcClearButton">
+                        <constraints>
+                          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Clear"/>
+                        </properties>
+                      </component>
+                      <component id="4d623" class="javax.swing.JButton" binding="webCalculateButton">
+                        <constraints>
+                          <grid row="4" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Calculate"/>
+                        </properties>
+                      </component>
+                      <component id="6ec26" class="javax.swing.JTextField" binding="webCalcRedundancyField">
+                        <constraints>
+                          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <text value="2"/>
+                        </properties>
+                      </component>
+                      <component id="74541" class="javax.swing.JLabel" binding="webCalcRedundancyLabel">
+                        <constraints>
+                          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Redundancy"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                </children>
+              </grid>
+              <grid id="a6f7d" binding="hostConvPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+                <constraints>
+                  <tabbedpane title="Hosting Bandwidth Calculator"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <grid id="dfb7f" binding="hostConvBotPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                    <constraints border-constraint="South"/>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="5da82" class="javax.swing.JButton" binding="hostCalculateButton">
+                        <constraints/>
+                        <properties>
+                          <text value="Calculate"/>
+                        </properties>
+                      </component>
+                      <component id="45d5d" class="javax.swing.JButton" binding="hostConvClearButton">
+                        <constraints/>
+                        <properties>
+                          <text value="Clear"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                  <grid id="3fdb6" binding="hostConvCenterPanel" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints border-constraint="Center"/>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="94f13" class="javax.swing.JTextField" binding="hostConvMonthField">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <text value="1000"/>
+                        </properties>
+                      </component>
+                      <component id="15c35" class="javax.swing.JLabel" binding="hostConvMonthLabel">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Monthly Usage"/>
+                        </properties>
+                      </component>
+                      <grid id="f123d" binding="hostConvButtonPanel1" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <component id="7d08f" class="javax.swing.JRadioButton" binding="hostConvBButton">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="Bytes (B)"/>
+                            </properties>
+                          </component>
+                          <component id="afb62" class="javax.swing.JRadioButton" binding="hostConvKBButton">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="KiloBytes (KB)"/>
+                            </properties>
+                          </component>
+                          <component id="70ff2" class="javax.swing.JRadioButton" binding="hostConvMBButton">
+                            <constraints>
+                              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="MegaBytes MB)"/>
+                            </properties>
+                          </component>
+                          <component id="b2071" class="javax.swing.JRadioButton" binding="hostConvGBButton">
+                            <constraints>
+                              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="GigaBytes (GB)"/>
+                            </properties>
+                          </component>
+                          <component id="fc409" class="javax.swing.JRadioButton" binding="hostConvTBButton">
+                            <constraints>
+                              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="TeraBytes (TB)"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                      <component id="416b8" class="javax.swing.JLabel" binding="hostConvCenterLabel">
+                        <constraints>
+                          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="is equivalent to"/>
+                        </properties>
+                      </component>
+                      <component id="c5c65" class="javax.swing.JTextField" binding="hostConvBandField">
+                        <constraints>
+                          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                        </constraints>
+                        <properties/>
+                      </component>
+                      <component id="84bd" class="javax.swing.JLabel" binding="hostConvBandLabel">
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Bandwidth"/>
+                        </properties>
+                      </component>
+                      <grid id="bfa6f" binding="hostConvButtonPanel2" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <component id="a3e4d" class="javax.swing.JRadioButton" binding="hostConvbitSButton">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="bit/s"/>
+                            </properties>
+                          </component>
+                          <component id="1ef44" class="javax.swing.JRadioButton" binding="hostConvKbitSButton">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="kbit/s"/>
+                            </properties>
+                          </component>
+                          <component id="662a1" class="javax.swing.JRadioButton" binding="hostConvMbitSButton">
+                            <constraints>
+                              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="mbit/s"/>
+                            </properties>
+                          </component>
+                          <component id="199cc" class="javax.swing.JRadioButton" binding="hostConvGbitSButton">
+                            <constraints>
+                              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="gbit/s"/>
+                            </properties>
+                          </component>
+                          <component id="43fad" class="javax.swing.JRadioButton" binding="hostConvTbitSButton">
+                            <constraints>
+                              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="tbit/s"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                    </children>
+                  </grid>
+                </children>
+              </grid>
+            </children>
+          </tabbedpane>
         </children>
       </tabbedpane>
     </children>
   </grid>
+  <buttonGroups>
+    <group name="buttonGroup1">
+      <member id="40f90"/>
+      <member id="82794"/>
+      <member id="afe80"/>
+      <member id="81fb7"/>
+      <member id="f305c"/>
+      <member id="bc29"/>
+      <member id="ffcd3"/>
+    </group>
+    <group name="buttonGroup2">
+      <member id="4a0ce"/>
+      <member id="c71a1"/>
+      <member id="75706"/>
+      <member id="15681"/>
+      <member id="7db0f"/>
+    </group>
+    <group name="buttonGroup3">
+      <member id="bd02f"/>
+      <member id="84fbe"/>
+      <member id="fa5e0"/>
+      <member id="9f8a7"/>
+      <member id="7c080"/>
+    </group>
+    <group name="buttonGroup4">
+      <member id="cafee"/>
+      <member id="e1539"/>
+      <member id="1b7e2"/>
+      <member id="37d9d"/>
+      <member id="6c34b"/>
+      <member id="d20c1"/>
+      <member id="b5e7d"/>
+    </group>
+  </buttonGroups>
 </form>

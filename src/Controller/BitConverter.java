@@ -2,7 +2,7 @@ package Controller;
 
 public class BitConverter {
     final String[] unitList = {"B", "kb", "KB", "mb", "MB", "gb", "GB", "tb", "TB"};
-    private DecimalCalculator decCalc = new DecimalCalculator();
+    Validator validator = new Validator();
 
     public double toBits(String original){
         String unit = "";
@@ -15,7 +15,7 @@ public class BitConverter {
         {
             check = original.substring(i, i+1);
 
-            if(!decCalc.isNum(check) && !check.equals("."))
+            if(!validator.isDecimal(check) && !check.equals("."))
             {
                 data = Double.parseDouble(original.substring(0, i));
 
