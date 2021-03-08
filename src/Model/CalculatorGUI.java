@@ -191,7 +191,7 @@ public class CalculatorGUI {
             }
         });
         decCalcAddButton.addActionListener(ae -> {
-            if(validator.isDecimal(decimal1.getText()) && decCalc.isNum(decimal2.getText())){
+            if(validator.isDecimal(decimal1.getText()) && validator.isDecimal(decimal2.getText())){
                 double answer = decCalc.add(Double.parseDouble(decimal1.getText()),
                         Double.parseDouble(decimal2.getText()));
                 if(!decCalcAnswerDisplay.getText().isEmpty()){
@@ -200,9 +200,15 @@ public class CalculatorGUI {
                 decCalcAnswerDisplay.append(decimal1.getText() + " + " + decimal2.getText() + " = " +
                         answer);
             }
+            else{
+                if(!decCalcAnswerDisplay.getText().isEmpty()){
+                    decCalcAnswerDisplay.append("\n");
+                }
+                decCalcAnswerDisplay.append("!!!One or more values are incorrect!!!");
+            }
         });
         decCalcSubButton.addActionListener(ae -> {
-            if(validator.isDecimal(decimal1.getText()) && decCalc.isNum(decimal2.getText())){
+            if(validator.isDecimal(decimal1.getText()) && validator.isDecimal(decimal2.getText())){
                 double answer = decCalc.subtract(Double.parseDouble(decimal1.getText()),
                         Double.parseDouble(decimal2.getText()));
                 if(!decCalcAnswerDisplay.getText().isEmpty()){
@@ -211,9 +217,15 @@ public class CalculatorGUI {
                 decCalcAnswerDisplay.append(decimal1.getText() + " - " + decimal2.getText() + " = " +
                         answer);
             }
+            else{
+                if(!decCalcAnswerDisplay.getText().isEmpty()){
+                    decCalcAnswerDisplay.append("\n");
+                }
+                decCalcAnswerDisplay.append("!!!One or more values are incorrect!!!");
+            }
         });
         decCalcMultButton.addActionListener(ae -> {
-            if(validator.isDecimal(decimal1.getText()) && decCalc.isNum(decimal2.getText())){
+            if(validator.isDecimal(decimal1.getText()) && validator.isDecimal(decimal2.getText())){
                 double answer = decCalc.multiply(Double.parseDouble(decimal1.getText()),
                         Double.parseDouble(decimal2.getText()));
                 if(!decCalcAnswerDisplay.getText().isEmpty()){
@@ -222,9 +234,15 @@ public class CalculatorGUI {
                 decCalcAnswerDisplay.append(decimal1.getText() + " * " + decimal2.getText() + " = " +
                         answer);
             }
+            else{
+                if(!decCalcAnswerDisplay.getText().isEmpty()){
+                    decCalcAnswerDisplay.append("\n");
+                }
+                decCalcAnswerDisplay.append("!!!One or more values are incorrect!!!");
+            }
         });
         decCalcDivButton.addActionListener(ae -> {
-            if(validator.isDecimal(decimal1.getText()) && decCalc.isNum(decimal2.getText()) &&
+            if(validator.isDecimal(decimal1.getText()) && validator.isDecimal(decimal2.getText()) &&
                     (Double.parseDouble(decimal2.getText()) != 0)){
                 double answer = decCalc.divide(Double.parseDouble(decimal1.getText()),
                         Double.parseDouble(decimal2.getText()));
@@ -233,6 +251,12 @@ public class CalculatorGUI {
                 }
                 decCalcAnswerDisplay.append(decimal1.getText() + " / " + decimal2.getText() + " = " +
                         answer);
+            }
+            else{
+                if(!decCalcAnswerDisplay.getText().isEmpty()){
+                    decCalcAnswerDisplay.append("\n");
+                }
+                decCalcAnswerDisplay.append("!!!One or more values are incorrect!!!");
             }
         });
 
@@ -259,6 +283,12 @@ public class CalculatorGUI {
                 bIntAnswerDisplay.append(bigInteger1.getText() + " + " + bigInteger2.getText() + " = " +
                         answer.toString());
             }
+            else{
+                if(!bIntAnswerDisplay.getText().isEmpty()){
+                    bIntAnswerDisplay.append("\n");
+                }
+                bIntAnswerDisplay.append("!!!One or more values are incorrect!!!");
+            }
         });
         bIntCalcSubButton.addActionListener(ae -> {
             if(validator.isBigInt(bigInteger1.getText()) && validator.isBigInt(bigInteger2.getText())) {
@@ -270,6 +300,12 @@ public class CalculatorGUI {
                 bIntAnswerDisplay.append(bigInteger1.getText() + " - " + bigInteger2.getText() + " = " +
                         answer.toString());
             }
+            else{
+                if(!bIntAnswerDisplay.getText().isEmpty()){
+                    bIntAnswerDisplay.append("\n");
+                }
+                bIntAnswerDisplay.append("!!!One or more values are incorrect!!!");
+            }
         });
         bIntCalcMultButton.addActionListener(ae -> {
             if(validator.isBigInt(bigInteger1.getText()) && validator.isBigInt(bigInteger2.getText())) {
@@ -280,6 +316,12 @@ public class CalculatorGUI {
                 }
                 bIntAnswerDisplay.append(bigInteger1.getText() + " * " + bigInteger2.getText() + " = " +
                         answer.toString());
+            }
+            else{
+                if(!bIntAnswerDisplay.getText().isEmpty()){
+                    bIntAnswerDisplay.append("\n");
+                }
+                bIntAnswerDisplay.append("!!!One or more values are incorrect!!!");
             }
         });
         bIntCalcDivButton.addActionListener(ae -> {
@@ -293,6 +335,12 @@ public class CalculatorGUI {
                 bIntAnswerDisplay.append(bigInteger1.getText() + " / " + bigInteger2.getText() + " = " +
                         answer + " with a remainder of " + bIntCalc.modular(new BigInteger(bigInteger1.getText()),
                         new BigInteger(bigInteger2.getText())));
+            }
+            else{
+                if(!bIntAnswerDisplay.getText().isEmpty()){
+                    bIntAnswerDisplay.append("\n");
+                }
+                bIntAnswerDisplay.append("!!!One or more values are incorrect!!!");
             }
         });
 
@@ -320,6 +368,12 @@ public class CalculatorGUI {
                 binCalcAnswerDisplay.append(tempBinary1.toString() + " + " + tempBinary2.toString() + " = " +
                         answer.toString());
             }
+            else{
+                if(!binCalcAnswerDisplay.getText().isEmpty()){
+                    binCalcAnswerDisplay.append("\n");
+                }
+                binCalcAnswerDisplay.append("!!!One or more values are incorrect!!!");
+            }
         });
         binCalcSubButton.addActionListener(ae -> {
             if(validator.isBinary(binary1.getText()) && validator.isBinary(binary2.getText())){
@@ -332,6 +386,12 @@ public class CalculatorGUI {
                 binCalcAnswerDisplay.append(tempBinary1.toString() + " - " + tempBinary2.toString() + " = " +
                         answer.toString());
             }
+            else{
+                if(!binCalcAnswerDisplay.getText().isEmpty()){
+                    binCalcAnswerDisplay.append("\n");
+                }
+                binCalcAnswerDisplay.append("!!!One or more values are incorrect!!!");
+            }
         });
         binCalcMultButton.addActionListener(ae -> {
             if(validator.isBinary(binary1.getText()) && validator.isBinary(binary2.getText())){
@@ -343,6 +403,12 @@ public class CalculatorGUI {
                 }
                 binCalcAnswerDisplay.append(tempBinary1.toString() + " * " + tempBinary2.toString() + " = " +
                         answer.toString());
+            }
+            else{
+                if(!binCalcAnswerDisplay.getText().isEmpty()){
+                    binCalcAnswerDisplay.append("\n");
+                }
+                binCalcAnswerDisplay.append("!!!One or more values are incorrect!!!");
             }
         });
         binCalcDivButton.addActionListener(ae -> {
@@ -358,6 +424,12 @@ public class CalculatorGUI {
                     binCalcAnswerDisplay.append(tempBinary1.toString() + " / " + tempBinary2.toString() + " = " +
                             answer.toString() + " with a remainder of " + remainder.toString());
                 }
+            }
+            else{
+                if(!binCalcAnswerDisplay.getText().isEmpty()){
+                    binCalcAnswerDisplay.append("\n");
+                }
+                binCalcAnswerDisplay.append("!!!One or more values are incorrect!!!");
             }
         });
 
@@ -379,6 +451,12 @@ public class CalculatorGUI {
                 }
                 binConvAnswerDisplay.append(tempBinary.getDecimal() + " in binary is " + tempBinary.getBitStr());
             }
+            else{
+                if(!binConvAnswerDisplay.getText().isEmpty()){
+                    binConvAnswerDisplay.append("\n");
+                }
+                binConvAnswerDisplay.append("!!!One or more values are incorrect!!!");
+            }
         });
         binToDecimalButton.addActionListener(ae -> {
             if(validator.isBinary(binConvField.getText())){
@@ -387,6 +465,12 @@ public class CalculatorGUI {
                     binConvAnswerDisplay.append("\n");
                 }
                 binConvAnswerDisplay.append(tempBinary.getBitStr() + " decimal value is " + tempBinary.getDecimal());
+            }
+            else{
+                if(!binConvAnswerDisplay.getText().isEmpty()){
+                    binConvAnswerDisplay.append("\n");
+                }
+                binConvAnswerDisplay.append("!!!One or more values are incorrect!!!");
             }
         });
 
@@ -414,6 +498,12 @@ public class CalculatorGUI {
                 hexCalcAnswerDisplay.append(tempHex1.toString() + " + " + tempHex2.toString() + " = " +
                         answer.toString());
             }
+            else{
+                if(!hexCalcAnswerDisplay.getText().isEmpty()){
+                    hexCalcAnswerDisplay.append("\n");
+                }
+                hexCalcAnswerDisplay.append("!!!One or more values are incorrect!!!");
+            }
         });
         hexCalcSubButton.addActionListener(ae -> {
             if(validator.isHexadec(hexadecimal1.getText()) && validator.isHexadec(hexadecimal2.getText())){
@@ -426,6 +516,12 @@ public class CalculatorGUI {
                 hexCalcAnswerDisplay.append(tempHex1.toString() + " - " + tempHex2.toString() + " = " +
                         answer.toString());
             }
+            else{
+                if(!hexCalcAnswerDisplay.getText().isEmpty()){
+                    hexCalcAnswerDisplay.append("\n");
+                }
+                hexCalcAnswerDisplay.append("!!!One or more values are incorrect!!!");
+            }
         });
         hexCalcMultButton.addActionListener(ae -> {
             if(validator.isHexadec(hexadecimal1.getText()) && validator.isHexadec(hexadecimal2.getText())){
@@ -437,6 +533,12 @@ public class CalculatorGUI {
                 }
                 hexCalcAnswerDisplay.append(tempHex1.toString() + " * " + tempHex2.toString() + " = " +
                         answer.toString());
+            }
+            else{
+                if(!hexCalcAnswerDisplay.getText().isEmpty()){
+                    hexCalcAnswerDisplay.append("\n");
+                }
+                hexCalcAnswerDisplay.append("!!!One or more values are incorrect!!!");
             }
         });
         hexCalcDivButton.addActionListener(ae -> {
@@ -452,6 +554,18 @@ public class CalculatorGUI {
                     hexCalcAnswerDisplay.append(tempHex1.toString() + " / " + tempHex2.toString() + " = " +
                             answer.toString() + " with a remainder of " + remainder.toString());
                 }
+                else{
+                    if(!hexCalcAnswerDisplay.getText().isEmpty()){
+                        hexCalcAnswerDisplay.append("\n");
+                    }
+                    hexCalcAnswerDisplay.append("!!!Can't divide by zero!!!");
+                }
+            }
+            else{
+                if(!hexCalcAnswerDisplay.getText().isEmpty()){
+                    hexCalcAnswerDisplay.append("\n");
+                }
+                hexCalcAnswerDisplay.append("!!!One or more values are incorrect!!!");
             }
         });
 
@@ -473,6 +587,12 @@ public class CalculatorGUI {
                 }
                 hexConvAnswerDisplay.append(tempHex.getDecimal() + " in Hexadecimal is " + tempHex.getHexStr());
             }
+            else{
+                if(!hexConvAnswerDisplay.getText().isEmpty()){
+                    hexConvAnswerDisplay.append("\n");
+                }
+                hexConvAnswerDisplay.append("!!!One or more values are incorrect!!!");
+            }
         });
         hexToDecimalButton.addActionListener(ae -> {
             if(validator.isHexadec(hexConvField.getText())){
@@ -481,6 +601,12 @@ public class CalculatorGUI {
                     hexConvAnswerDisplay.append("\n");
                 }
                 hexConvAnswerDisplay.append(tempHex.getHexStr() + " decimal value is " + tempHex.getDecimal());
+            }
+            else{
+                if(!hexConvAnswerDisplay.getText().isEmpty()){
+                    hexConvAnswerDisplay.append("\n");
+                }
+                hexConvAnswerDisplay.append("!!!One or more values are incorrect!!!");
             }
         });
 
@@ -502,11 +628,17 @@ public class CalculatorGUI {
                 double bits = Double.parseDouble(dataUnitConvField.getText());
                 dataUnitConvAnswerDisplay.setText(unitConv.dataUnitConv(bits));
             }
+            else{
+                dataUnitConvAnswerDisplay.setText("!!!One or more values are incorrect!!!");
+            }
         });
         dataUnitConvBButton.addActionListener(ae -> {
             if(validator.isDecimal(dataUnitConvField.getText())) {
                 double bits = bitConv.toBits(dataUnitConvField.getText() + "B");
                 dataUnitConvAnswerDisplay.setText(unitConv.dataUnitConv(bits));
+            }
+            else{
+                dataUnitConvAnswerDisplay.setText("!!!One or more values are incorrect!!!");
             }
         });
         dataUnitConvkbButton.addActionListener(ae -> {
@@ -514,11 +646,17 @@ public class CalculatorGUI {
                 double bits = bitConv.toBits(dataUnitConvField.getText() + "kb");
                 dataUnitConvAnswerDisplay.setText(unitConv.dataUnitConv(bits));
             }
+            else{
+                dataUnitConvAnswerDisplay.setText("!!!One or more values are incorrect!!!");
+            }
         });
         dataUnitConvKBButton.addActionListener(ae -> {
             if(validator.isDecimal(dataUnitConvField.getText())) {
                 double bits = bitConv.toBits(dataUnitConvField.getText() + "KB");
                 dataUnitConvAnswerDisplay.setText(unitConv.dataUnitConv(bits));
+            }
+            else{
+                dataUnitConvAnswerDisplay.setText("!!!One or more values are incorrect!!!");
             }
         });
         dataUnitConvmbButton.addActionListener(ae -> {
@@ -526,11 +664,17 @@ public class CalculatorGUI {
                 double bits = bitConv.toBits(dataUnitConvField.getText() + "mb");
                 dataUnitConvAnswerDisplay.setText(unitConv.dataUnitConv(bits));
             }
+            else{
+                dataUnitConvAnswerDisplay.setText("!!!One or more values are incorrect!!!");
+            }
         });
         dataUnitConvMBButton.addActionListener(ae -> {
             if(validator.isDecimal(dataUnitConvField.getText())) {
                 double bits = bitConv.toBits(dataUnitConvField.getText() + "MB");
                 dataUnitConvAnswerDisplay.setText(unitConv.dataUnitConv(bits));
+            }
+            else{
+                dataUnitConvAnswerDisplay.setText("!!!One or more values are incorrect!!!");
             }
         });
         dataUnitConvgbButton.addActionListener(ae -> {
@@ -538,11 +682,17 @@ public class CalculatorGUI {
                 double bits = bitConv.toBits(dataUnitConvField.getText() + "gb");
                 dataUnitConvAnswerDisplay.setText(unitConv.dataUnitConv(bits));
             }
+            else{
+                dataUnitConvAnswerDisplay.setText("!!!One or more values are incorrect!!!");
+            }
         });
         dataUnitConvGBButton.addActionListener(ae -> {
             if(validator.isDecimal(dataUnitConvField.getText())) {
                 double bits = bitConv.toBits(dataUnitConvField.getText() + "GB");
                 dataUnitConvAnswerDisplay.setText(unitConv.dataUnitConv(bits));
+            }
+            else{
+                dataUnitConvAnswerDisplay.setText("!!!One or more values are incorrect!!!");
             }
         });
         dataUnitConvtbButton.addActionListener(ae -> {
@@ -550,11 +700,17 @@ public class CalculatorGUI {
                 double bits = bitConv.toBits(dataUnitConvField.getText() + "tb");
                 dataUnitConvAnswerDisplay.setText(unitConv.dataUnitConv(bits));
             }
+            else{
+                dataUnitConvAnswerDisplay.setText("!!!One or more values are incorrect!!!");
+            }
         });
         dataUnitConvTBButton.addActionListener(ae -> {
             if(validator.isDecimal(dataUnitConvField.getText())) {
                 double bits = bitConv.toBits(dataUnitConvField.getText() + "TB");
                 dataUnitConvAnswerDisplay.setText(unitConv.dataUnitConv(bits));
+            }
+            else{
+                dataUnitConvAnswerDisplay.setText("!!!One or more values are incorrect!!!");
             }
         });
 
@@ -607,6 +763,9 @@ public class CalculatorGUI {
                     bw = new Bandwidth(value, "tb");
                 }
                 downUpCalcAnswerDisplay.setText(downUpCalc.downUpTime(bw, fs));
+            }
+            else{
+                downUpCalcAnswerDisplay.setText("!!!One or more inputs are incorrect!!!");
             }
         });
 
@@ -667,6 +826,9 @@ public class CalculatorGUI {
                 }
 
                 webCalcAnswerDisplay.setText(webCalc.webBandCalc(viewFreq, views, fs, redundancy));
+            }
+            else{
+                webCalcAnswerDisplay.setText("!!!One or more inputs are incorrect!!!");
             }
         });
 
