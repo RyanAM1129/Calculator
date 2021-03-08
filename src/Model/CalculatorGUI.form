@@ -1315,5 +1315,19 @@
       <member id="d20c1"/>
       <member id="b5e7d"/>
     </group>
+    <group name="buttonGroup5">
+      <member id="7d08f"/>
+      <member id="afb62"/>
+      <member id="70ff2"/>
+      <member id="b2071"/>
+      <member id="fc409"/>
+    </group>
+    <group name="buttonGroup6">
+      <member id="a3e4d"/>
+      <member id="1ef44"/>
+      <member id="662a1"/>
+      <member id="199cc"/>
+      <member id="43fad"/>
+    </group>
   </buttonGroups>
 </form>
