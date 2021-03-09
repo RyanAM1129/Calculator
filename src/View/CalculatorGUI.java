@@ -1,6 +1,10 @@
-package Model;
+package View;
 
 import Controller.*;
+import Model.Bandwidth;
+import Model.Binary;
+import Model.FileSize;
+import Model.Hexadecimal;
 
 import javax.swing.*;
 import java.math.BigInteger;
@@ -242,15 +246,19 @@ public class CalculatorGUI {
             }
         });
         decCalcDivButton.addActionListener(ae -> {
-            if(validator.isDecimal(decimal1.getText()) && validator.isDecimal(decimal2.getText()) &&
-                    (Double.parseDouble(decimal2.getText()) != 0)){
-                double answer = decCalc.divide(Double.parseDouble(decimal1.getText()),
-                        Double.parseDouble(decimal2.getText()));
-                if(!decCalcAnswerDisplay.getText().isEmpty()){
+            if(validator.isDecimal(decimal1.getText()) && validator.isDecimal(decimal2.getText())){
+                if (!decCalcAnswerDisplay.getText().isEmpty()) {
                     decCalcAnswerDisplay.append("\n");
                 }
-                decCalcAnswerDisplay.append(decimal1.getText() + " / " + decimal2.getText() + " = " +
-                        answer);
+                if(Double.parseDouble(decimal2.getText()) != 0){
+                    double answer = decCalc.divide(Double.parseDouble(decimal1.getText()),
+                            Double.parseDouble(decimal2.getText()));
+                    decCalcAnswerDisplay.append(decimal1.getText() + " / " + decimal2.getText() + " = " +
+                            answer);
+                }
+                else{
+                    decCalcAnswerDisplay.append("!!!Can't divide by Zero!!!");
+                }
             }
             else{
                 if(!decCalcAnswerDisplay.getText().isEmpty()){
@@ -415,14 +423,17 @@ public class CalculatorGUI {
             if(validator.isBinary(binary1.getText()) && validator.isBinary(binary2.getText())){
                 Binary tempBinary1 = new Binary(binary1.getText());
                 Binary tempBinary2 = new Binary(binary2.getText());
+                if (!binCalcAnswerDisplay.getText().isEmpty()) {
+                    binCalcAnswerDisplay.append("\n");
+                }
                 if(tempBinary2.getDecimal() != 0) {
                     Binary answer = binCalc.divide(tempBinary1, tempBinary2);
                     Binary remainder = binCalc.modular(tempBinary1, tempBinary2);
-                    if (!binCalcAnswerDisplay.getText().isEmpty()) {
-                        binCalcAnswerDisplay.append("\n");
-                    }
                     binCalcAnswerDisplay.append(tempBinary1.toString() + " / " + tempBinary2.toString() + " = " +
                             answer.toString() + " with a remainder of " + remainder.toString());
+                }
+                else{
+                    binCalcAnswerDisplay.append("!!!Can't divide by zero!!!");
                 }
             }
             else{

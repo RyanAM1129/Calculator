@@ -28,9 +28,4 @@ public class DecimalCalculator extends Calculator{
     public double modular(double numerator, double denominator){
         return numerator % denominator;
     }
-
-    public boolean isNum(String str){
-        try { Double.parseDouble(str); return true; }
-        catch (NumberFormatException nfe){ return false; }
-    }
 }
